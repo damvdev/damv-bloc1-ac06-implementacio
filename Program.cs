@@ -1,8 +1,10 @@
 ﻿using System;
-namespace Ac06Implementacio {
+namespace Ac06Implementacio
+{
     // Exercise 1
     // PRECONDITION: The user is prompted to input two integers.
-    public class Program {
+    public class Program
+    {
         public static void Main()
         {
             // Constants
@@ -10,14 +12,15 @@ namespace Ac06Implementacio {
             const string MsgInputTwo = "Enter the second integer:";
             const string MsgError = "Error in format";
             const string MsgResult = "The sum is:";
-            
+
             // Variables
             int numOne, numTwo, sum;
             bool isInt;
+
+            // Input and data validation
             Console.WriteLine(MsgInputOne);
             isInt = Int32.TryParse(Console.ReadLine(), out numOne);
 
-            // Input and data validation
             if (isInt)
             {
                 Console.WriteLine(MsgInputTwo);
