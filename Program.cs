@@ -1,36 +1,31 @@
 ﻿using System;
+using System.Security.Cryptography;
 namespace Ac06Implementacio {
-    // Exercise 1
-    // PRECONDITION: The user is prompted to input two integers.
+    // Exercise 2
+    // PRECONDITION: The user is prompted to input a temperature in Celsius.
     public class Program {
         public static void Main()
         {
             // Constants
-            const string MsgInputOne = "Enter the first integer:";
-            const string MsgInputTwo = "Enter the second integer:";
+            const float KelvinOffset = 273.15f;
+            const string MsgInput = "Enter temperature in Celsius:";
             const string MsgError = "Error in format";
-            const string MsgResult = "The sum is:";
-            
+            const string MsgResult = "Temperature in Kelvin:";
+
             // Variables
-            int numOne, numTwo, sum;
+            float kelvin;
+            double celsius;
             bool isInt;
-            Console.WriteLine(MsgInputOne);
-            isInt = Int32.TryParse(Console.ReadLine(), out numOne);
 
             // Input and data validation
+            Console.WriteLine(MsgInput);
+            isInt = Double.TryParse(Console.ReadLine(), out celsius);
+           
             if (isInt)
             {
-                Console.WriteLine(MsgInputTwo);
-                isInt = Int32.TryParse(Console.ReadLine(), out numTwo);
-                if (isInt)
-                {
-                    sum = numOne + numTwo;
-                    Console.WriteLine(MsgResult + " " + sum);
-                }
-                else
-                {
-                    Console.WriteLine(MsgError);
-                }
+                kelvin = (float) celsius + KelvinOffset;
+                Console.WriteLine(MsgResult + " " + kelvin);
+   
             }
             else
             {
@@ -38,5 +33,5 @@ namespace Ac06Implementacio {
             }
         }
     }
-    // POSTCONDITION: 'sum' contains the sum of 'num1' and 'num2', and it is // displayed.
+    // POSTCONDITION: 'kelvin' contains the converted temperature, and it is displayed.
 }
