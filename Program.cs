@@ -1,34 +1,36 @@
 ﻿using System;
+
 namespace Ac06Implementacio
 {
-    // Exercise 1
-    // PRECONDITION: The user is prompted to input two integers.
+    // Exercise 3
+    // PRECONDITION: The user is prompted to input the width and height of a rectangle.
     public class Program
     {
         public static void Main()
         {
             // Constants
-            const string MsgInputOne = "Enter the first integer:";
-            const string MsgInputTwo = "Enter the second integer:";
+            const string MsgInputWidth = "Enter the width of the rectangle:";
+            const string MsgInputHeight = "Enter the height of the rectangle:";
             const string MsgError = "Error in format";
-            const string MsgResult = "The sum is:";
+            const string MsgResult = "The area of the rectangle is:";
 
             // Variables
-            int numOne, numTwo, sum;
+            float area;
+            double width, height;
             bool isInt;
 
             // Input and data validation
-            Console.WriteLine(MsgInputOne);
-            isInt = Int32.TryParse(Console.ReadLine(), out numOne);
+            Console.WriteLine(MsgInputWidth);
+            isInt = Double.TryParse(Console.ReadLine(), out width);
 
             if (isInt)
             {
-                Console.WriteLine(MsgInputTwo);
-                isInt = Int32.TryParse(Console.ReadLine(), out numTwo);
+                Console.WriteLine(MsgInputHeight);
+                isInt = Double.TryParse(Console.ReadLine(), out height);
                 if (isInt)
                 {
-                    sum = numOne + numTwo;
-                    Console.WriteLine(MsgResult + " " + sum);
+                    area = (float)(width * height);
+                    Console.WriteLine(MsgResult + " " + area);
                 }
                 else
                 {
@@ -41,5 +43,5 @@ namespace Ac06Implementacio
             }
         }
     }
-    // POSTCONDITION: 'sum' contains the sum of 'num1' and 'num2', and it is // displayed.
+    // POSTCONDITION: 'area' contains the product of 'width' and 'height', and it is displayed.
 }
