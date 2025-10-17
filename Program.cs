@@ -1,5 +1,5 @@
 ﻿using System;
-using System.Security.Cryptography;
+
 namespace Ac06Implementacio {
     // Exercise 2
     // PRECONDITION: The user is prompted to input a temperature in Celsius.
