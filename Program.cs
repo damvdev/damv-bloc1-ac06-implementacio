@@ -1,36 +1,57 @@
 ﻿using System;
 namespace Ac06Implementacio
 {
-    // Exercise 4
-    // PRECONDITION: The user is prompted to input an amount in euros.
+    // Exercise 5
+    // PRECONDITION: The user is prompted to input three real numbers.
     public class Program
     {
         public static void Main()
         {
-            // Change the ExchangeRate constant to use the 'M' suffix for decimal literals
-            const decimal ExchangeRate = 1.12M;
-            const string MsgInput = "Enter amount in euros: ";
+            const string MsgInputFirstNumber = "Enter the first number: ";
+            const string MsgInputSecondNumber = "Enter the second number: ";
+            const string MsgInputThirdNumber = "Enter the third number: ";
             const string MsgError = "Error in format.";
-            const string MsgOutput = "Amount in dollars: ";
+            const string MsgOutput = "The average is: ";
 
             // Variables
-            decimal euros, dollars;
-            bool isDecimal;
+            float average;
+            double num1, num2, num3;
+            bool isDouble;
 
             // Input and data validation
-            Console.WriteLine(MsgInput);
-            isDecimal = Decimal.TryParse(Console.ReadLine(), out euros);
-
-            if (isDecimal)
+            Console.WriteLine(MsgInputFirstNumber);
+            isDouble = Double.TryParse(Console.ReadLine(), out num1);
+            if (isDouble) 
             {
-                dollars = euros * ExchangeRate;
-                Console.WriteLine(MsgOutput + dollars);
+                Console.WriteLine(MsgInputSecondNumber);
+                isDouble = Double.TryParse(Console.ReadLine(), out num2);
+                if (isDouble) 
+                {
+                    Console.WriteLine(MsgInputThirdNumber);
+                    isDouble = Double.TryParse(Console.ReadLine(), out num3);
+                    if (isDouble) 
+                    {
+                        average = (float)(num1 + num2 + num3) / 3f;
+                        // Output
+                        Console.WriteLine(MsgOutput + average);
+                    }
+                    else 
+                    {
+                        Console.WriteLine(MsgError);
+                    }
+                }
+                else 
+                {
+                    Console.WriteLine(MsgError);
+                }
             }
-            else
+            else 
             {
                 Console.WriteLine(MsgError);
             }
+
+
         }
     }
-    // POSTCONDITION: 'dollars' contains the converted amount, and it is displayed.
+    // POSTCONDITION: 'average' contains the arithmetic mean of the three numbers, and it is displayed.
 }
