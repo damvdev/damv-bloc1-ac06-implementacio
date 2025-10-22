@@ -41,5 +41,5 @@ namespace Ac06Implementacio
             }
         }
     }
-    // POSTCONDITION: 'sum' contains the sum of 'num1' and 'num2', and it is // displayed.
+    // POSTCONDITION: 'sum' contains the sum of 'num1' and 'num2', and it is displayed.
 }
