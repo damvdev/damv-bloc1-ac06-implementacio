@@ -7,32 +7,33 @@ namespace Ac06Implementacio
     {
         public static void Main()
         {
+            // Constants
             const string MsgInputFirstNumber = "Enter the first number: ";
             const string MsgInputSecondNumber = "Enter the second number: ";
             const string MsgInputThirdNumber = "Enter the third number: ";
+
             const string MsgError = "Error in format.";
             const string MsgOutput = "The average is: ";
 
             // Variables
             float average;
-            double num1, num2, num3;
+            double numOne, numberTwo, numThree;
             bool isDouble;
 
             // Input and data validation
             Console.WriteLine(MsgInputFirstNumber);
-            isDouble = Double.TryParse(Console.ReadLine(), out num1);
+            isDouble = Double.TryParse(Console.ReadLine(), out numOne);
             if (isDouble) 
             {
                 Console.WriteLine(MsgInputSecondNumber);
-                isDouble = Double.TryParse(Console.ReadLine(), out num2);
+                isDouble = Double.TryParse(Console.ReadLine(), out numberTwo);
                 if (isDouble) 
                 {
                     Console.WriteLine(MsgInputThirdNumber);
-                    isDouble = Double.TryParse(Console.ReadLine(), out num3);
+                    isDouble = Double.TryParse(Console.ReadLine(), out numThree);
                     if (isDouble) 
                     {
-                        average = (float)(num1 + num2 + num3) / 3f;
-                        // Output
+                        average = (float)(numOne + numberTwo + numThree) / 3f;
                         Console.WriteLine(MsgOutput + average);
                     }
                     else 
@@ -49,8 +50,6 @@ namespace Ac06Implementacio
             {
                 Console.WriteLine(MsgError);
             }
-
-
         }
     }
     // POSTCONDITION: 'average' contains the arithmetic mean of the three numbers, and it is displayed.
