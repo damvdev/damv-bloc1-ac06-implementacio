@@ -1,39 +1,30 @@
 ﻿using System;
 namespace Ac06Implementacio
 {
-    // Exercise 1
-    // PRECONDITION: The user is prompted to input two integers.
+    // Exercise 4
+    // PRECONDITION: The user is prompted to input an amount in euros.
     public class Program
     {
         public static void Main()
         {
-            // Constants
-            const string MsgInputOne = "Enter the first integer:";
-            const string MsgInputTwo = "Enter the second integer:";
-            const string MsgError = "Error in format";
-            const string MsgResult = "The sum is:";
+            // Change the ExchangeRate constant to use the 'M' suffix for decimal literals
+            const decimal ExchangeRate = 1.12M;
+            const string MsgInput = "Enter amount in euros: ";
+            const string MsgError = "Error in format.";
+            const string MsgOutput = "Amount in dollars: ";
 
             // Variables
-            int numOne, numTwo, sum;
-            bool isInt;
+            decimal euros, dollars;
+            bool isDecimal;
 
             // Input and data validation
-            Console.WriteLine(MsgInputOne);
-            isInt = Int32.TryParse(Console.ReadLine(), out numOne);
+            Console.WriteLine(MsgInput);
+            isDecimal = Decimal.TryParse(Console.ReadLine(), out euros);
 
-            if (isInt)
+            if (isDecimal)
             {
-                Console.WriteLine(MsgInputTwo);
-                isInt = Int32.TryParse(Console.ReadLine(), out numTwo);
-                if (isInt)
-                {
-                    sum = numOne + numTwo;
-                    Console.WriteLine(MsgResult + " " + sum);
-                }
-                else
-                {
-                    Console.WriteLine(MsgError);
-                }
+                dollars = euros * ExchangeRate;
+                Console.WriteLine(MsgOutput + dollars);
             }
             else
             {
@@ -41,5 +32,5 @@ namespace Ac06Implementacio
             }
         }
     }
-    // POSTCONDITION: 'sum' contains the sum of 'num1' and 'num2', and it is displayed.
+    // POSTCONDITION: 'dollars' contains the converted amount, and it is displayed.
 }
